@@ -1,0 +1,43 @@
+{% extends 'article/base.html' %}
+
+{% block bodyblock%}
+<div class="container mt-2">
+  <a href="{% url 'article:create-view' %}" class="btn btn-primary">
+    Make a new post</a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope='col'>ID</th>
+        <th scope='col'>Title</th>
+        <th scope='col'>Snippet</th>
+        <th scope='col'>Date posted</th>
+        <th scope='col'>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+      {% for article in article_list %}
+        <tr>
+          <th scope='row'>
+            <a href="{% url 'article:detail-view' pk=article.pk %}">
+              {{ article.id }}
+            </a>
+          </th>
+          <td>
+            <a href="{% url 'article:detail-view' pk=article.pk %}">
+              {{ article.title }}
+            </a>
+          </th>
+          <td>{{ article.content }}</td>
+          <td>{{ article.created_at }}</td>
+          <td>
+            <a href="{% url 'article:delete-view' pk=article.pk %}" class="btn btn-danger">
+            Delete</a>
+          </td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

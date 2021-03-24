@@ -1,0 +1,15 @@
+{% extends 'article/base.html' %}
+{% load bootstrap4 %}
+
+{% block bodyblock%}
+<div class="container">
+  <form action="{% url 'article:create-view' %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    <input type="submit" class="btn btn-dark mt-2" value="Post">
+  </form>
+  <a href="{% url 'article:list-view' %}" class="btn btn-warning mt-2">
+    Cancel</a>
+</div>
+{% endblock %}

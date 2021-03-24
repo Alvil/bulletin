@@ -1,0 +1,9 @@
+f{% extends 'article/base.html' %}
+
+{% block bodyblock%}
+    {% for article in article_list %}
+    {{ article.id }}
+    {{ article.title }}
+    {{ article.content }}
+    {% endfor %}
+{% endblock %}

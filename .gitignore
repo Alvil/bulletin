@@ -1,0 +1,22 @@
+# os files
+.DS_Store
+
+# editors
+.idea
+*.sublime-project
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.editorconfig
+
+# environment
+venv/
+env/
+.env
+
+# cache
+__pycache__
+*.pyc
